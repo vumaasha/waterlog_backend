@@ -24,8 +24,13 @@ def usage(argv):
           '(example: "%s development.ini")' % (cmd, cmd))
     sys.exit(1)
 
+def expandvars_dict(settings):
+    """Expands all environment variables in a settings dictionary."""
+    return dict((key, os.path.expandvars(value)) for
+                key, value in settings.items())
 
 def main(argv=sys.argv):
+    settings = expandvars_dict(settings)
     if len(argv) < 2:
         usage(argv)
     config_uri = argv[1]

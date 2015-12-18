@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = waterlog_py:main
+      [console_scripts]
+      initialize_waterlog_py_db = waterlog_py.scripts.initializedb:main
+      

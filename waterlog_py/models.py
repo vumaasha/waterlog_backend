@@ -6,6 +6,7 @@ from sqlalchemy import (
     BigInteger,
     Float, 
     Text,
+    String
     )
 
 from sqlalchemy.ext.declarative import declarative_base
@@ -25,7 +26,7 @@ class WaterLoggingInfo(Base):
     """docstring for WaterLoggingInfo"""
     __tablename__ = 'water_logging_info'
     id = Column(Integer, primary_key=True)
-    android_id = Column(BigInteger)
+    android_id = Column(String(100))
     lat = Column(Float) 
     long = Column(Float) 
     logging_level = Column(SmallInteger)

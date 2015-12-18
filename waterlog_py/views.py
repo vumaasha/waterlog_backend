@@ -33,4 +33,8 @@ def store_water_logging_info(request):
     water_log = WaterLoggingInfo(**log)
     DBSession.add(water_log)
 
+@view_config(route_name='home', request_method='GET')
+def home(request):
+   return Response('WaterLogger is up') 
+
 

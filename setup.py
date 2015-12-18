@@ -17,6 +17,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
+    'pymysql'
     ]
 
 setup(name='waterlog_py',

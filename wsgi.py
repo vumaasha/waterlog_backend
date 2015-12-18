@@ -11,6 +11,8 @@ try:
 except IOError:
   pass
 
+import sys
+
 here = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(here, 'waterlog_py'))
 config = os.path.join(here,'production.ini')

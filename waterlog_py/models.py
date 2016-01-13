@@ -6,8 +6,10 @@ from sqlalchemy import (
     BigInteger,
     Float, 
     Text,
-    String
+    String,
+    DateTime
     )
+from datetime import datetime
 
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -30,3 +32,8 @@ class WaterLoggingInfo(Base):
     lat = Column(Float) 
     long = Column(Float) 
     logging_level = Column(SmallInteger)
+    area = Column(String(50))
+    sub_locality = Column(String(50))
+    through_fare = Column(String(100))
+    postal_code = Column(String(10))
+    creation_date_utc = Column(DateTime,default=datetime.utcnow())

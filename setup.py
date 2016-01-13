@@ -18,7 +18,8 @@ requires = [
     'zope.sqlalchemy',
     'waitress',
     'pymysql',
-    'cornice'
+    'cornice',
+    'geopy'
     ]
 
 setup(name='waterlog_py',

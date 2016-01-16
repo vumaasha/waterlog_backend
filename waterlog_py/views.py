@@ -1,4 +1,5 @@
 from cornice import Service
+from datetime import datetime
 from pyramid.response import Response
 from pyramid.view import view_config
 
@@ -34,6 +35,7 @@ def is_log_valid(request):
         else:
             address_info = reverse_code(lat,long)
             log.update(address_info)
+            log['creation_date_utc'] = datetime.utcnow()
         request.validated['log'] = log
     else:
         request.errors.add(request.url,'Invalid request','Missing parameters')

@@ -43,6 +43,7 @@ def store_water_logging_info(request):
     log = request.validated['log']
     water_log = WaterLoggingInfo(**log)
     DBSession.add(water_log)
+    return {'status':'success'}
 
 @view_config(route_name='home', request_method='GET')
 def home(request):
